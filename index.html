@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;">
+   <meta charset="utf-8">
+  <title>Process</title>
+  <link href="index.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div>
+    <div>
+      Algorithm:
+      <form id="algorithm">
+        <input type="radio" name="algorithm" value="fcfs" checked/> FCFS<br/>
+        <input type="radio" name="algorithm" value="sjf" /> SJF<br/>
+        <input type="radio" name="algorithm" value="priority" /> Priority scheduling<br/>
+        <input type="radio" name="algorithm" value="robin" /> Round Robin
+      </form>
+      <br>
+    </div>
+    <table id="inputTable">
+      <tr>
+        <th>Process</th>
+        <th>Arrival Time</th>
+        <th>Execute Time</th>
+        <th class="servtime">Service Time</th>
+        <th class="priority-only">Priority</th>
+      </tr>
+      <tr>
+        <td>P0</td>
+        <td>0</td>
+        <td><input class="initial exectime" type="text" value="5" /></td>
+        <td class="servtime"></td>
+        <td class="priority-only initial"><input type="text" /></td>
+      </tr>
+      <tr>
+        <td>P1</td>
+        <td>1</td>
+        <td><input class="initial exectime" value="3" /></td>
+        <td class="servtime"></td>
+        <td class="priority-only"><input type="text" /></td>
+      </tr>
+    </table> 
+  </div>
+  <input type="button" value="+" onclick="addRow();" />
+  <input id="minus" style="display: inline;" type="button" value="-" onclick="deleteRow();"/>
+  <div>
+  </div>
+  <p id="quantumParagraph" hidden>Quantum:
+    <input style="width: 50px;" id="quantum" type="text" value="3" />
+  </p>
+  <input type="button" value="Go" onclick="draw();" />
+  <br/><br/>
+
+  <fresh>
+  </fresh>
+  <p>
+    總時間: <input type="text" id="timer" value="0"></input> sec
+    平均時間: <input type="text" id="avgtime" value="0"> sec
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  </p>
+  <script src="index.js"></script>
+</body>
+</html>
